@@ -28,5 +28,6 @@ int main()
 	string x = "Dmitry";
 	gretting gret(x);
 	gret.foo();
+	cout<<"Hello world"<<endl;
 	return 0;
 }
