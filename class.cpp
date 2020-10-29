@@ -1,4 +1,4 @@
-include <iostream>
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -15,9 +15,9 @@ public:
 	{
 		this->name = name;
 	}
-	string foo()
+	void foo()
 	{
-		cout<< "Hello, " << name<<endl
+		cout << "Hello, " << name << endl;
 	}
 };
 
