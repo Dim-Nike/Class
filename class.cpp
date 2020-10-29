@@ -3,6 +3,7 @@
 
 using namespace std;
 
+string x;
 
 class gretting
 {
@@ -21,13 +22,24 @@ public:
 	}
 };
 
+class bot
+{
 
+public:
+	void user()
+	{
+		cout << "Hello, i am bot, and you " << x << endl;
+	}
+};
 
 int main()
 {
-	string x = "Dmitry";
+	cout << "How are you name?" << endl;
+	
+	cin >> x;
 	gretting gret(x);
 	gret.foo();
-	cout<<"Hello world"<<endl;
+	
+	
 	return 0;
 }
