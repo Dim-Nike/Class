@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string x;
+string name;
 
 class gretting
 {
@@ -22,53 +22,131 @@ public:
     }
 };
 
-class regestr
+class Regestr
 {
 protected:
     string x;
     string y;
-
+    
+    int ID=0;
+    
+    
 public:
+   
+    static int count;
 
-    regestr()
+    Regestr()
     {
-	cout<<"It is regestration\nThink up your login and password"<<endl;
-        cin >> this->x >>this-> y;
+        
+        count++;
+        ID == count;
+        cout << "It is regestration\nThink up your login and password" << endl;
+        cin >> this->x >> this->y;
         string login = x;
         string password = y;
     }
+   
+    virtual void menu() {} 
 };
 
-class Menu :public regestr, : protected regestr
-	{
+int Regestr::count = 0;
+
+class Menu :public Regestr
+{
 public:
-	void menu()
-	{
-        	cout<<"You are now the in main menu\nEnter your login and password to continue"<<endl;
-		cin>>this-x>>this->y;
-	}
-	};
+    
 
-    /*class bot
-    {
-
-    public:
-        void user()
+   
+        void menu() override
         {
-            cout << "Hello, i am bot, and you " << x << endl;
+            int a;
+            string login, password;
+
+                cout << "You are now the in main menu\nEnter your login and password to continue" << endl;
+                cin >> login >> password;
+                if (this->x == login && this->y == password)
+                {
+                    cout << "You are logged as a user\n\n1.Find out information about yourself" << endl;
+                    
+                    cin >> a;
+
+                    switch (a)
+                    {
+                    case 1: 
+                        cout << "Your profile: \nID = " << ID << endl;
+                    }
+                }
+
+               
+        
+               /* if (login = this->x, this->x = "666" && y == password, password == "666")
+                {
+                    cout << "Good, admin" << endl;
+                }*/
+
+
+                else
+                {
+                    cout << "Error" << endl;
+                }
+
         }
-    };*/
+};
 
-    int main()
+
+class admin :public Regestr
+{
+public:
+    void menu() override
     {
-        cout << "How are you name?" << endl;
-        string x;
-        cin >> x;
-        gretting gretting(x);
-        /*regestr v1;
-        v1.menu();*/
+        int a;
+        string login, password;
+        cout << "You are now the in main menu\nEnter your login and password to continue" << endl;
+        cin >> login >> password;
+        if (x == login, login == "666" && y == password, password == "666")
+        {
+            cout << "Good, admin" << endl;
+        }
 
 
-        return 0;
+       /* if (x != login && y != password)
+        {
+            cout << "Error, admin" << endl;
+    }*/
+        else 
+        {
+            cout << "Error, admin" << endl;
+        }
     }
+};
+
+class Display :public Regestr
+{
+public:
+    void print(Regestr *foo)
+    {
+        foo->menu();
+    }
+};
+
+/*class bot
+{
+
+public:
+    void user()
+    {
+        cout << "Hello, i am bot, and you " << x << endl;
+    }
+};*/
+
+int main()
+{
+    cout << "How are you name?" << endl;
+    string x;
+    cin >> x;
+    gretting gretting(x);
+    Menu menu;
+    menu.menu();
+    return 0;
+}
 
