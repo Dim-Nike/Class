@@ -24,32 +24,30 @@ public:
 
 class regestr
 {
-private:
-    int x;
-    int y;
+protected:
+    string x;
+    string y;
 
 public:
 
-    void head()
+    regestr()
     {
-        cout << "Enter login and password" << endl;
-        this->x = x;
-        this->y = y;
-        cin >> x >> y;
-        int login = x;
-        int password = y;
-        cout << "Enter again login and password" << endl;
-        cin >> x >> y;
-        if (login == x && password == y)
-        {
-            cout << "You passed the resolution" << endl;
-        }
+	cout<<"It is regestration\nThink up your login and password"<<endl;
+        cin >> this->x >>this-> y;
+        string login = x;
+        string password = y;
+    }
+};
 
-        else
-        {
-            cout << "Error:\nWrong login or password" << endl;
-        }
-    };
+class Menu :public regestr, : protected regestr
+	{
+public:
+	void menu()
+	{
+        	cout<<"You are now the in main menu\nEnter your login and password to continue"<<endl;
+		cin>>this-x>>this->y;
+	}
+	};
 
     /*class bot
     {
@@ -67,8 +65,8 @@ public:
         string x;
         cin >> x;
         gretting gretting(x);
-        regestr v1;
-        v1.head();
+        /*regestr v1;
+        v1.menu();*/
 
 
         return 0;
