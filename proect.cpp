@@ -1,4 +1,3 @@
-#include <pch.h>
 #include <iostream>
 #include <string>
 
@@ -40,6 +39,16 @@ public:
 		cin >> x >> y;
 		int login = x;
 		int password = y;
+		cout<<"Enter again login and password"<<endl;
+                cin>>x>>y;
+                if (login==x && password==y)
+                {
+                        cout<<"You passed the resolution"<<endl;
+                }
+
+                else
+                {
+                        cout<<"Error:\nWrong login or password"<<endl;
 	}
 };
 
